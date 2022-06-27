@@ -30,7 +30,7 @@ class SnapdropServer {
 
         this._rooms = {};
 
-        console.log('Matchdrop is running on port', port);
+        console.log('Matchdrop backend is running on port', port);
     }
 
     _onConnection(peer) {

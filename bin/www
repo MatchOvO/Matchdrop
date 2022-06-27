@@ -15,9 +15,9 @@ var http = require('http');
  */
 const configPath = path.join(__dirname,'../config.js');
 const configObj = require(configPath);
-const frontedPort = configObj.port.frontend;
+const frontendPort = configObj.port.frontend;
 
-var port = normalizePort(process.env.PORT || `${frontedPort}`);
+var port = normalizePort(process.env.PORT || `${frontendPort}`);
 app.set('port', port);
 
 /**
@@ -87,6 +87,7 @@ function onError(error) {
  */
 
 function onListening() {
+  console.log(`Matchdrop frontend running at port:${frontendPort}`)
   var addr = server.address();
   var bind = typeof addr === 'string'
       ? 'pipe ' + addr
