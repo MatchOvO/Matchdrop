@@ -1,12 +1,30 @@
 (function(){
-  
+  // Import config
+  const configObj = window.configObj;
   // Select the button
   const btnTheme = document.getElementById('theme');
   // Check for dark mode preference at the OS level
   const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-  // Get the user's theme preference from local storage, if it's available
-  // const currentTheme = localStorage.getItem('theme');
-  const currentTheme = 'dark';
+  // Handle Theme config
+  let currentTheme = '';
+
+  if (configObj.theme.defaultTheme === 'auto'){
+    if (localStorage.getItem('theme')) {
+      localStorage.removeItem('theme')
+      currentTheme = localStorage.getItem('theme');
+    }
+  }else if (configObj.theme.defaultTheme === 'dark'){
+    currentTheme = 'dark';
+  }else if (configObj.theme.defaultTheme === 'light'){
+    currentTheme = 'light';
+  }else{
+    console.error('can not read the right defaultTheme');
+  }
+
+  if (configObj.theme.enableSwitch === 'false'){
+    btnTheme.style.display = 'none';
+  }
+
   // If the user's preference in localStorage is dark...
   if (currentTheme == 'dark') {
     // ...let's toggle the .dark-theme class on the body

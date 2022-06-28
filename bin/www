@@ -35,6 +35,16 @@ server.on('error', onError);
 server.on('listening', onListening);
 
 /**
+ * Import config into cache
+ */
+let configCache = configObj;
+delete configCache.uniqueName;
+fs.writeFile(path.join(__dirname,'../public/cache/config.json'),JSON.stringify(configCache),err => {
+  if (!err) return;
+  console.log(err.message);
+})
+
+/**
  * Normalize a port into a number, string, or false.
  */
 

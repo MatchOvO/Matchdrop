@@ -1,11 +1,12 @@
 {
   "name": "matchdrop",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "concurrently \"node ./bin/www\" \"node ./bin/server.js\"",
     "on": "concurrently \"pm2 start ./bin/www\" \"pm2 start ./bin/server.js\"",
     "off": "concurrently \"pm2 stop ./bin/www\" \"pm2 stop ./bin/server.js\"",
+    "restart": "concurrently \"pm2 restart ./bin/www\" \"pm2 restart ./bin/server.js\"",
     "dev": "concurrently \"nodemon ./bin/www\" \"nodemon ./bin/server.js\""
   },
   "dependencies": {

@@ -18,7 +18,7 @@ process.on('SIGTERM', () => {
 })
 
 const parser = require('ua-parser-js');
-const { uniqueNamesGenerator, animals, colors } = require('unique-names-generator');
+const { uniqueNamesGenerator} = require('unique-names-generator');
 
 class SnapdropServer {
 
@@ -70,7 +70,6 @@ class SnapdropServer {
                 break;
             case 'pong':
                 sender.lastBeat = Date.now();
-                console.log('beat');
                 break;
         }
 
@@ -146,7 +145,7 @@ class SnapdropServer {
 
     _keepAlive(peer) {
         this._cancelKeepAlive(peer);
-        var timeout = 3000;
+        var timeout = configObj.network.pollingSpeed;
         if (!peer.lastBeat) {
             peer.lastBeat = Date.now();
         }
@@ -234,13 +233,13 @@ class Peer {
         if(!deviceName)
             deviceName = 'Unknown Device';
 
-        const displayName = uniqueNamesGenerator({
-            length: 2,
-            separator: ' ',
-            dictionaries: [colors, animals],
-            style: 'capital',
+        const uniqueNameConfig = configObj.uniqueName
+
+        const _uniqueNameConfig = {
+            ...uniqueNameConfig,
             seed: this.id.hashCode()
-        })
+        };
+        const displayName = uniqueNamesGenerator(_uniqueNameConfig)
 
         this.name = {
             model: ua.device.model,

@@ -7,21 +7,18 @@
     <!-- Web App Config -->
     <title>Matchdrop</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="#3367d6">
+    <meta name="theme-color" content="" id="meta_themeColor">
     <meta name="color-scheme" content="dark light">
     <meta name="apple-mobile-web-app-capable" content="no">
-    <meta name="apple-mobile-web-app-title" content="Snapdrop">
+    <meta name="apple-mobile-web-app-title" content="Matchdrop">
     <!-- Descriptions -->
     <meta name="description" content="Instantly share images, videos, PDFs, and links with people nearby. Peer2Peer and Open Source. No Setup, No Signup.">
     <meta name="keywords" content="File, Transfer, Share, Peer2Peer">
-    <meta name="author" content="RobinLinus">
-    <meta property="og:title" content="Snapdrop">
+    <meta name="author" content="MatchOvO">
+    <meta property="og:title" content="Matchdrop">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://snapdrop.net/">
-    <meta property="og:author" content="https://facebook.com/RobinLinus">
-    <meta name="twitter:author" content="@RobinLinus">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:description" content="Instantly share images, videos, PDFs, and links with people nearby. Peer2Peer and Open Source. No Setup, No Signup.">
+    <meta property="og:url" content="https://matchdrop.chenzs.com/">
+    <meta property="og:author" content="https://www.chenzs.com">
     <meta name="og:description" content="Instantly share images, videos, PDFs, and links with people nearby. Peer2Peer and Open Source. No Setup, No Signup.">
     <!-- Icons -->
     <link rel="icon" sizes="96x96" href="images/favicon-96x96.png">
@@ -34,6 +31,7 @@
     <!-- Resources -->
     <link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/footer.css">
+    <script src="javascripts/configHandler.js"></script>
 </head>
 
 <body translate="no">
@@ -48,21 +46,21 @@
                 <use xlink:href="#icon-theme" />
             </svg>
         </a>
-        <!-- <a href="#" id="notification" class="icon-button" title="Enable Notifications" hidden>
+        <a href="#" id="notification" class="icon-button" title="Enable Notifications" hidden>
             <svg class="icon">
                 <use xlink:href="#notifications" />
             </svg>
         </a>
-        <a href="#" id="install" class="icon-button" title="Install Snapdrop" hidden>
+        <a href="#" id="install" class="icon-button" title="Install Matchdrop" hidden>
             <svg class="icon">
                 <use xlink:href="#homescreen" />
             </svg>
-        </a> -->
+        </a>
     </header>
     <!-- Peers -->
     <x-peers class="center"></x-peers>
     <x-no-peers>
-        <h2 style="text-shadow: 0 0 15px rgb(88, 88, 88);background-color: rgba(0, 0, 0, .1);">在其他设备打开Matchdrop即可传输文件</h2>
+        <h2>在其他设备打开Matchdrop即可传输文件</h2>
     </x-no-peers>
     <x-instructions desktop="点击传输文件，右键传输文本" mobile="单击传输文件，长按传输文本"></x-instructions>
     <!-- Footer -->
@@ -71,7 +69,7 @@
             <use xlink:href="#wifi-tethering" />
         </svg>
         <div id="displayName" placeholder="轻松实现局域网内任意设备间文件传输"></div>
-        <div class="font-body2" style="background-color: rgba(0, 0, 0, .2);text-shadow: 0 0 15px rgb(88, 88, 88);">You can be discovered by everyone on this network!</div>
+        <div class="font-body2">You can be discovered by everyone on this network!</div>
     </footer>
     <!-- Receive Dialog -->
     <x-dialog id="receiveDialog">
@@ -84,12 +82,12 @@
                     <img id='img-preview' src="">
                 </div>
                 <div class="row">
-                    <label for="autoDownload" class="grow">Ask to save each file before downloading</label>
+                    <label for="autoDownload" class="grow">下载每一个文件前都需要确认</label>
                     <input type="checkbox" id="autoDownload" checked="">
                 </div>
                 <div class="row-reverse">
-                    <a class="button" close id="download" title="Download File" autofocus>Save</a>
-                    <button class="button" close>Ignore</button>
+                    <a class="button" close id="download" title="Download File" autofocus>保存</a>
+                    <button class="button" close>忽略</button>
                 </div>
             </x-paper>
         </x-background>
@@ -102,8 +100,8 @@
                     <h3>Send a Message</h3>
                     <div id="textInput" class="textarea" role="textbox" placeholder="Send a message" autocomplete="off" autofocus contenteditable></div>
                     <div class="row-reverse">
-                        <button class="button" type="submit" close>Send</button>
-                        <a class="button" close>Cancel</a>
+                        <button class="button" type="submit" close>发送</button>
+                        <a class="button" close>取消</a>
                     </div>
                 </x-paper>
             </x-background>
@@ -116,15 +114,15 @@
                 <h3>Message Received</h3>
                 <div class="font-subheading" id="text"></div>
                 <div class="row-reverse">
-                    <button class="button" id="copy" close autofocus>Copy</button>
-                    <button class="button" close>Close</button>
+                    <button class="button" id="copy" close autofocus>复制</button>
+                    <button class="button" close>取消</button>
                 </div>
             </x-paper>
         </x-background>
     </x-dialog>
     <!-- Toast -->
     <div class="toast-container full center">
-        <x-toast class="row" shadow="1" id="toast">File Transfer Completed</x-toast>
+        <x-toast class="row" shadow="1" id="toast">文件发送成功</x-toast>
     </div>
     <!-- About Page -->
     <x-about id="about" class="full center column">
@@ -141,7 +139,7 @@
             </svg>
             <h1>Matchdrop</h1>
             <div class="font-subheading">简洁，美观，跨平台文件传输工具</div>
-            <div class="font-subheading">power by Snapdrop</div>
+            <div class="font-subheading">power by Matchdrop & Snapdrop</div>
             <div class="row">
                 <a class="icon-button" target="_blank" href="https://github.com/MatchOvO/Matchdrop" title="Snapdrop on Github" rel="noreferrer">
                     <svg class="icon">
@@ -229,11 +227,11 @@
     <noscript>
         <x-noscript class="full center column">
             <h1>Enable JavaScript</h1>
-            <h3>Snapdrop works only with JavaScript</h3>
+            <h3>Matchdrop works only with JavaScript</h3>
         </x-noscript>
         <style>
         x-noscript {
-            background: #599cfc;
+            background: rgb(255, 235, 167);
             color: white;
             z-index: 2;
         }

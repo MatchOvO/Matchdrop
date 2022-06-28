@@ -30,15 +30,18 @@ Matchdrop完全放弃了Snapdrop原项目的服务框架，使用[Express](https
 * 2.克隆GitHub仓库,在cmd工具或终端输入以下命令（需安装git工具，Mac自带git工具）
 ```
     git clone https://github.com/MatchOvO/Matchdrop
+    //也可以直接在GitHub页面下载压缩包解压
+    
+    //进入项目文件夹
     cd Matchdrop/
 ```
-* 3.安装依赖包
+* 3.安装
 ```
     npm install
 ```
 * 4.启动服务
 ```
-    //普通模式
+    //开发模式-开启 （能够输出调试代码）
     npm start   //"control+c"或"ctrl+c"退出
     
     //生产模式-开启服务（后台运行）====>推荐
@@ -47,8 +50,9 @@ Matchdrop完全放弃了Snapdrop原项目的服务框架，使用[Express](https
     //生产模式-关闭服务
     npm run off
     
-    //开发模式-开启 （能够输出调试；代码变化，服务自动重启应用变更）
-    npm run dev     //"control+c"或"ctrl+c"退出
+    //生产模式-重启服务
+    npm run restart
+    
 ```
 * 5.本地浏览器地址栏输入 localhost:8080 即可访问部署好的web应用
 * 6.可修改相关配置，打开config.js文件即可修改。

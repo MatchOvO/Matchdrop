@@ -2,11 +2,11 @@ var CACHE_NAME = 'snapdrop-cache-v2';
 var urlsToCache = [
   'index.html',
   './',
-  'styles.css',
-  'scripts/network.js',
-  'scripts/ui.js',
-  'scripts/clipboard.js',
-  'scripts/theme.js',
+  'stylesheets/styles.css',
+  'javascripts/network.js',
+  'javascripts/ui.js',
+  'javascripts/clipboard.js',
+  'javascripts/theme.js',
   'sounds/blop.mp3',
   'images/favicon-96x96.png'
 ];

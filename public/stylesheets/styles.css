@@ -1,10 +1,9 @@
 /* Constants */
 
 :root {
-    --icon-size: 24px;
+    /*--icon-size: 24px;*/
     /* --primary-color: #4285f4; */
-    --primary-color: rgb(255, 235, 167);
-    --peer-width: 120px;
+    /*--peer-width: 120px;*/
     color-scheme: light dark;
 }
 
