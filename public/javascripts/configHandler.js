@@ -74,7 +74,7 @@
     function _uiShadowHandler(uiShadow) {
         if (uiShadow === 'true'){
             $('x-no-peers h2').style = 'text-shadow: 0 0 15px rgb(88, 88, 88);background-color: rgba(0, 0, 0, .1);';
-            $('footer font-body2').style = 'background-color: rgba(0, 0, 0, .2);text-shadow: 0 0 15px rgb(88, 88, 88);';
+            $('footer .font-body2').style = 'background-color: rgba(0, 0, 0, .2);text-shadow: 0 0 15px rgb(88, 88, 88);';
         }
     }
 })();
