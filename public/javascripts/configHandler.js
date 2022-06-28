@@ -53,7 +53,7 @@
     function _webNameHandler(webName) {
         $$('title').innerHTML = webName;
         $('#about h1').innerHTML = webName;
-
+        $('x-no-peers h2').innerHTML = `在其他设备打开${webName}即可传输`;
     }
 
     function _beianHandler(configObj) {
