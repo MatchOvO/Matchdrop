@@ -14,6 +14,8 @@
         _themeHandler();
       }
     }
+  }else {
+    _themeHandler();
   }
   function _themeHandler() {
     // Import config
