@@ -168,7 +168,7 @@ Matchdrop完全放弃了Snapdrop原项目的服务框架，使用[Express](https
     * 类型：`true | false`
     * 默认值：***'false'***
     * 描述：此项配置控制是否显示公网备案信息
-      * `true` 显示公网办备案信息
+      * `true` 显示公网备案信息
       * `false` 不显示公网备案信息
 ***
 ### port
