@@ -154,15 +154,15 @@ Matchdrop完全放弃了Snapdrop原项目的服务框架，使用[Express](https
 ### info
 * webName（必需选项）
   * 类型：`String字符串`
-  * 默认值：'Matchdrop'
+  * 默认值：***'Matchdrop'***
   * 描述：此选项设置web服务的名称，用于控制页面中的显示名称和标签页标题等等有关应用名称的位置
 * webURL
   * 类型：`String字符串`
-  * 默认值：'http://localhost:8080'
+  * 默认值：***'http://localhost:8080'***
   * 描述：设置你的web服务的地址，仅作为信息记录作用，对实际web服务没有影响
 * author
     * 类型：`String字符串`
-    * 默认值：'MatchOvO'
+    * 默认值：***'MatchOvO'***
     * 描述：设置制作者的名字，仅作为信息记录作用，对实际web服务没有影响
 * beian
     * 类型：`true | false`
