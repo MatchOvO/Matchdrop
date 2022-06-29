@@ -3,6 +3,7 @@
   if (!window.configObj){
     console.log('can not fetch config');
     let status = 0;
+    polling();
     function polling() {
       if (window.configObj) status = 1;
       if (status === 0){
