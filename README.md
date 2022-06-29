@@ -20,7 +20,7 @@ Matchdrop完全放弃了Snapdrop原项目的服务框架，使用[Express](https
 并将在未来开放更多的功能，融入远程文件传输等。
 
 ## Easy set up
-* 1.确保安装了Node和npm包管理工具
+* 1.确保安装了Node(V12或以上版本)和npm包管理工具
 ```
     //如果没有安装Node和npm，Linus可以通过yum等包管理工具快速安装,如下:
     yum install node.js
@@ -130,7 +130,7 @@ Matchdrop完全放弃了Snapdrop原项目的服务框架，使用[Express](https
 
 * 7.将frontend端口号设置为80，即可对外提供http链接的web服务（服务器安全组策略需要开启80端口）
 * 8.如果你有nginx等web服务相关知识，建议使用nginx等web服务反向代理给本地的端口号，利用nginx等功能优化服务器性能。
-* 9.如果使用反向代理，请务必要设置X-Fowarded-for的请求头字段，nginx参考配置如下：
+* 9.如果使用反向代理，请务必要设置X-Fowarded-for的请求头字段和允许建立长连接配置，nginx参考配置如下：
 ```
        server {
             listen   80;
@@ -142,6 +142,7 @@ Matchdrop完全放弃了Snapdrop原项目的服务框架，使用[Express](https
     
             location / {
                 proxy_pass http://127.0.0.1:8080;
+                proxy_http_version 1.1;
                 proxy_set_header Connection "upgrade";
                 proxy_set_header Upgrade $http_upgrade;
                 proxy_set_header X-Forwarded-for $remote_addr;
