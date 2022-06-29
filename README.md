@@ -4,10 +4,11 @@
 
 [Machdrop](https://matchdrop.chenzs.com): local file sharing in your browser. Inspired by Apple's Airdrop.Base on [Snapdrop](https://github.com/RobinLinus/snapdrop)
 
+一个本地文件和文本传输分享web应用
 
 #### Matchdrop is built with the following technologies:
 * base on [Snapdrop](https://github.com/RobinLinus/snapdrop)
-* Vanilla HTML5 / ES6 / CSS3 frontend
+* Vanilla HTML5 / ES8 / CSS3 frontend
 * [WebRTC](http://webrtc.org/) / [WebSockets](http://www.websocket.org/)
 * [NodeJS](https://nodejs.org/en/) backend
 * [Progressive Web App](https://wikipedia.org/wiki/Progressive_Web_App)
