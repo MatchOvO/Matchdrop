@@ -62,5 +62,46 @@ module.exports = {
 
         // set the width of channels' UI ----(needed)
         channelUi_width:'120px'
+    },
+    // set up PWA manifest
+    manifest:{
+        name: "Matchdrop",
+        short_name: "Matchdrop",
+        icons: [{
+            src: "../images/android-chrome-192x192.png",
+            sizes: "192x192",
+            type: "image/png"
+        },{
+            src: "../images/android-chrome-512x512.png",
+            sizes: "512x512",
+            type: "image/png"
+        },{
+            src: "../images/android-chrome-192x192-maskable.png",
+            sizes: "192x192",
+            type: "image/png",
+            purpose: "maskable"
+        },{
+            src: "../images/android-chrome-512x512-maskable.png",
+            sizes: "512x512",
+            type: "image/png",
+            purpose: "maskable"
+        },{
+            src: "../images/favicon-96x96.png",
+            sizes: "96x96",
+            type: "image/png"
+        }],
+        background_color: "#efefef",
+        start_url: "/",
+        display: "minimal-ui",
+        theme_color: "rgb(255, 235, 167)",
+        share_target: {
+            method:"GET",
+            action: "/?share_target",
+            params: {
+                title: "title",
+                text: "text",
+                url: "url"
+            }
+        }
     }
 }

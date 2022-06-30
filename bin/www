@@ -38,11 +38,17 @@ server.on('listening', onListening);
  * Import config into cache
  */
 let configCache = configObj;
+let manifestCache = configObj.manifest
 delete configCache.uniqueName;
+delete configCache.manifest;
 fs.writeFile(path.join(__dirname,'../public/cache/config.json'),JSON.stringify(configCache),err => {
   if (!err) return;
   console.log(err.message);
-})
+});
+fs.writeFile(path.join(__dirname,'../public/cache/manifest.json'),JSON.stringify(manifestCache),err => {
+  if (!err) return;
+  console.log(err.message);
+});
 
 /**
  * Normalize a port into a number, string, or false.
