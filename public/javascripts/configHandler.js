@@ -14,9 +14,12 @@
             // call handlers
             _webNameHandler(configObj.info.webName);
             _rootStyleHandler(configObj);
+            _themeHandler(configObj);
             _beianHandler(configObj);
             _topBarHandler(configObj.theme.topBar);
             _uiShadowHandler(configObj.theme.uiShadow);
+            _loadingBoxHandler();
+            // close loading-box
         }catch (err){
             console.log(err);
         }
@@ -76,5 +79,16 @@
             $('x-no-peers h2').style = 'text-shadow: 0 0 15px rgb(88, 88, 88);background-color: rgba(0, 0, 0, .1);';
             $('footer .font-body2').style = 'background-color: rgba(0, 0, 0, .2);text-shadow: 0 0 15px rgb(88, 88, 88);';
         }
+    }
+
+    function _loadingBoxHandler() {
+        console.log('close loading window')
+        const loadingBox = $('.loading-box');
+        setTimeout(()=>{
+            loadingBox.style.opacity = '0';
+            setTimeout(()=>{
+                loadingBox.style.display = 'none';
+            },1000)
+        },1000)
     }
 })();

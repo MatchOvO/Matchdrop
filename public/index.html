@@ -29,12 +29,19 @@
     <meta name="twitter:image" content="https://snapdrop.net/images/twitter-stream.jpg">
     <meta property="og:image" content="https://snapdrop.net/images/twitter-stream.jpg">
     <!-- Resources -->
+    <link rel="stylesheet" href="./stylesheets/animate.min.css"/>
     <link rel="stylesheet" type="text/css" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/footer.css">
-    <script src="javascripts/configHandler.js"></script>
 </head>
 
 <body translate="no">
+    <div class="loading-box full center column">
+        <svg class="icon logo">
+            <use xlink:href="#wifi-tethering" />
+        </svg>
+        <h1>Matchdrop</h1>
+        <h3>Loading...</h3>
+    </div>
     <header class="row-reverse">
         <a href="#about" class="icon-button" title="About Snapdrop">
             <svg class="icon">
@@ -214,6 +221,7 @@
         </symbol>
     </svg>
     <!-- Scripts -->
+    <script src="javascripts/configHandler.js" async></script>
     <script src="javascripts/network.js"></script>
     <script src="javascripts/ui.js"></script>
     <script src="javascripts/theme.js" async></script>

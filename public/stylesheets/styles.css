@@ -1,8 +1,8 @@
 /* Constants */
 
 :root {
-    /*--icon-size: 24px;*/
     /* --primary-color: #4285f4; */
+    /*--icon-size: 24px;*/
     /*--peer-width: 120px;*/
     color-scheme: light dark;
 }
@@ -132,7 +132,39 @@ a {
     cursor: pointer;
 }
 
+/* Loading-box */
 
+.loading-box{
+    background-color: rgb(255, 235, 167);
+    z-index: 999;
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+.loading-box .logo{
+    --icon-size: 96px;
+    color: #2d2f39;
+    animation: flipInX;
+    animation-duration: 1s;
+}
+
+.loading-box h1{
+    font-size: 34px;
+    animation: flipInX;
+    animation-duration: .5s;
+    animation-delay: .5s;
+    animation-fill-mode: both;
+}
+
+.loading-box h3{
+    font-size: 16px;
+    animation: fadeIn;
+    animation-duration: .8s;
+    animation-delay: .5s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
 
 /* Icons */
 
