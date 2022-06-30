@@ -144,16 +144,17 @@ a {
 .loading-box .logo{
     --icon-size: 96px;
     color: #2d2f39;
-    animation: flipInX;
-    animation-duration: 1s;
+    /*animation: flipInX;*/
+    /*animation-duration: 1s;*/
 }
 
 .loading-box h1{
     font-size: 34px;
     color: #2d2f39;
     animation: flipInX;
-    animation-duration: .5s;
-    animation-delay: .5s;
+    /*animation-duration: .5s;*/
+    animation-duration: 1s;
+    /*animation-delay: .5s;*/
     animation-fill-mode: both;
 }
 
