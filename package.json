@@ -1,6 +1,6 @@
 {
   "name": "matchdrop",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
     "start": "concurrently \"node ./bin/www\" \"node ./bin/server.js\"",
