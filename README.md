@@ -122,6 +122,11 @@ Matchdrop完全放弃了Snapdrop原项目的服务框架，使用[Express](https
 
             // set the width of channels' UI ----(needed)
             channelUi_width:'120px'
+        },
+        manifest:{
+            /**
+             *  PWA manifest option
+             * */
         }
     }
     
@@ -302,6 +307,9 @@ Matchdrop完全放弃了Snapdrop原项目的服务框架，使用[Express](https
   * 默认值：***'120px'***
   * 描述：
 ***
+### manifest
+* 此项配置里配置的是PWA应用的信息，PWA允许用户将网站作为应用安装，仅支持Win Mac Android系统的Edge,Google,FireFox等浏览器
+* 详细配置选项请阅读 [Web App Manifest](https://developer.mozilla.org/zh-CN/docs/Web/Manifest#Browser_compatibility) 文档
 ## Dictionaries available
 
 #### numbers
