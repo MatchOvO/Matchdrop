@@ -138,35 +138,84 @@ a {
     background-color: rgb(255, 235, 167);
     z-index: 999;
     opacity: 1;
-    transition: opacity 1s;
+    transition: opacity .8s;
 }
 
 .loading-box .logo{
     --icon-size: 96px;
     color: #2d2f39;
-    /*animation: flipInX;*/
-    /*animation-duration: 1s;*/
+    -webkit-animation: fade-in 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: fade-in 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
+
+@-webkit-keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 
 .loading-box h1{
     font-size: 34px;
     color: #2d2f39;
-    animation: flipInX;
-    /*animation-duration: .5s;*/
-    animation-duration: 1s;
-    /*animation-delay: .5s;*/
-    animation-fill-mode: both;
+    -webkit-animation: tracking-in-contract-bck 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) alternate both;
+    animation: tracking-in-contract-bck 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) alternate both;
+}
+@-webkit-keyframes tracking-in-contract-bck {
+    0% {
+        letter-spacing: 1em;
+        -webkit-transform: translateZ(400px);
+        transform: translateZ(400px);
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.6;
+    }
+    100% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
+@keyframes tracking-in-contract-bck {
+    0% {
+        letter-spacing: 1em;
+        -webkit-transform: translateZ(400px);
+        transform: translateZ(400px);
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.6;
+    }
+    100% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+    }
 }
 
 .loading-box h3{
     font-size: 16px;
     color: #2d2f39;
-    animation: fadeIn;
-    animation-duration: .8s;
-    animation-delay: .5s;
-    animation-fill-mode: both;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+    -webkit-animation: fade-in .8s cubic-bezier(0.390, 0.575, 0.565, 1.000) infinite alternate both;
+    animation: fade-in .8s cubic-bezier(0.390, 0.575, 0.565, 1.000) infinite alternate both;
+    animation-delay: 1.5s;
+}
+
+.loading-box h3::after{
+    content: '...';
+    position: absolute;
 }
 
 /* Icons */

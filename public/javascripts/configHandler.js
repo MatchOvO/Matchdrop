@@ -18,8 +18,8 @@
             _beianHandler(configObj);
             _topBarHandler(configObj.theme.topBar);
             _uiShadowHandler(configObj.theme.uiShadow);
-            _loadingBoxHandler();
             // close loading-box
+            _loadingBoxHandler();
         }catch (err){
             console.log(err);
         }
@@ -82,7 +82,7 @@
     }
 
     function _loadingBoxHandler() {
-        console.log('close loading window')
+        console.log('close loading window');
         const loadingBox = $('.loading-box');
         setTimeout(()=>{
             loadingBox.style.opacity = '0';
